@@ -26,3 +26,10 @@ WHERE  czpay.industry_branch_code IS NOT  NULL
 GROUP BY year, ID_branch, branch, ID_goods, goods
 ORDER BY year, ID_branch, ID_goods
 ;
+
+--ZKOUSKA--
+SELECT *
+FROM t_jana_sitova_sql_primary_final;
+
+--POMOCNE SELECTY--
+
