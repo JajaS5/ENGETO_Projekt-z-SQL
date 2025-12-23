@@ -1,3 +1,7 @@
+-- vytvorení první tabulky--
+
+DROP TABLE IF EXISTS t_jana_sitova_sql_primary_final;
+
 CREATE TABLE t_jana_sitova_sql_primary_final AS 
 SELECT
              czpay.payroll_year AS year,
