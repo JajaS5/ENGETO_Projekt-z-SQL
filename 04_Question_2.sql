@@ -14,7 +14,7 @@ SELECT COUNT(*) AS pocet_radku
 FROM t_jana_sitova_project_sql_primary_final
 WHERE id_branch IS NULL;
 
---SELECT Q2--
+--SELECT to  Q2--
 WITH jasi AS (
     SELECT 
         tjasif.YEAR, 
@@ -40,7 +40,6 @@ SELECT *,
        ROUND(avg_of_avg_payroll / avg_of_avg_price, 2) AS purchasing_power
 FROM jasi
 ORDER BY YEAR;
-
 
 
 
