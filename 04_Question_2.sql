@@ -9,12 +9,12 @@ WHERE cpc.name LIKE 'Chléb%' OR cpc.name LIKE 'Mléko%'
 ;
 --chleb 111301--mleko 114201--
 
+---overeni nul--
+SELECT COUNT(*) AS pocet_radku
+FROM t_jana_sitova_project_sql_primary_final
+WHERE id_branch IS NULL;
 
-
-
-
-
-
+--SELECT Q2--
 WITH jasi AS (
     SELECT 
         tjasif.YEAR, 
@@ -41,6 +41,6 @@ SELECT *,
 FROM jasi
 ORDER BY YEAR;
 
---output--
+
 
 
