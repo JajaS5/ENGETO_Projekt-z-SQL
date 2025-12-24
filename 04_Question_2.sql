@@ -7,7 +7,7 @@ SELECT
 FROM czechia_price_category cpc 
 WHERE cpc.name LIKE 'Chléb%' OR cpc.name LIKE 'Mléko%'
 ;
---chleb 111301--mleko 114201--
+--output--chleb 111301--mleko 114201--
 
 ---overeni nul--
 SELECT COUNT(*) AS pocet_radku
