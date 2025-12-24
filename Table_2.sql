@@ -1,3 +1,8 @@
+-- vytvorení DRUHÉ tabulky--
+
+DROP TABLE IF EXISTS t_jana_sitova_sql_secondary_final;
+
+
 CREATE TABLE t_jana_sitova_sql_primary_secondary_final AS 
 SELECT
     cou.country,
