@@ -33,6 +33,8 @@ FROM t_jana_sitova_sql_primary_final;
 
 --POMOCNE SELECTY--
 
+--Zjistení min/max--
+
 SELECT
       min (payroll_year), 
       max (payroll_year)
@@ -51,5 +53,18 @@ SELECT
 FROM economies; 
 --output 1960, 2020--
 
+--Pocet 0 ve sloupecku--
 
+SELECT COUNT(*) AS pocet_radku
+FROM czechia_payroll
+WHERE value_type_code = 5958
+AND industry_branch_code IS NULL;
+--output 172-- 
+ 
+--overení UNIT CODE--
+SELECT DISTINCT unit_code
+FROM czechia_payroll
+WHERE value_type_code = 5958;
+--output 200--
+--prumerna mzda--unit code=200--
 
