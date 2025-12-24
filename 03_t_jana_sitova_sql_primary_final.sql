@@ -33,3 +33,23 @@ FROM t_jana_sitova_sql_primary_final;
 
 --POMOCNE SELECTY--
 
+SELECT
+      min (payroll_year), 
+      max (payroll_year)
+ FROM czechia_payroll;
+--output 2000, 2021--
+
+SELECT
+      min (date_from),
+      max (date_to)
+FROM czechia_price;
+--output 2006, 2018--
+
+SELECT
+     min (year),
+     max (year)
+FROM economies; 
+--output 1960, 2020--
+
+
+
