@@ -1,5 +1,20 @@
 -- Q2 -- Kolik je možné si koupit litrů mléka a kilogramů chleba za první a poslední srovnatelné období v dostupných datech cen a mezd?--
 
+--pomocny SELECT--code mleko_chleb--
+SELECT 
+	cpc.name,
+	cpc.code
+FROM czechia_price_category cpc 
+WHERE cpc.name LIKE 'Chléb%' OR cpc.name LIKE 'Mléko%'
+;
+--chleb 111301--mleko 114201--
+
+
+
+
+
+
+
 WITH jasi AS (
     SELECT 
         tjasif.YEAR, 
