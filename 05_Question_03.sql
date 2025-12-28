@@ -18,7 +18,7 @@ WHERE yr_pay IN (2006, 2018)
 GROUP BY goods
 ORDER BY price_diff_percent DESC;
 
----další--
+---Celkový průměr meziročních změn (pokles/růst) ceny potravin v %--
 
 
 
