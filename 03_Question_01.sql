@@ -39,4 +39,29 @@ payroll_changes AS (
     GROUP BY br_name
     ORDER BY payroll_trend;
 
+--Pokles mezd, meziroční pokles--
+WITH yearly_payroll AS (
+          SELECT
+                   br_name AS industry_branch,
+                   yr_pay AS year,
+                   AVG(avg_payroll) AS avg_payroll_year
+                  FROM t_jana_sitova_project_sql_primary_final
+           WHERE yr_pay BETWEEN 2006 AND 2018
+           GROUP BY br_name, yr_pay),
+payroll_changes AS (
+          SELECT
+                   industry_branch,
+                   year,
+                   avg_payroll_year,
+                   LAG(avg_payroll_year) OVER (PARTITION BY industry_branch ORDER BY year ) AS prev_payroll
+          FROM yearly_payroll)
+         SELECT
+                  industry_branch,
+                 year,
+                ROUND(((avg_payroll_year - prev_payroll) / prev_payroll) * 100, 2) AS yoy_change_percent
+               FROM payroll_changes
+              WHERE prev_payroll IS NOT NULL
+              AND avg_payroll_year < prev_payroll
+              ORDER BY yoy_change_percent ASC;
+
 
