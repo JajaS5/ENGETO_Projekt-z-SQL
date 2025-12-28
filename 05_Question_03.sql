@@ -43,8 +43,7 @@ WHERE prev_price IS NOT NULL
 GROUP BY goods
 ORDER BY avg_yoy_growth_percent ASC;
 
-
-
+--
 
 
 
