@@ -3,6 +3,7 @@ PROJEKT z SQL
 Projekt z SQL byl vytvořen v rámci kurzu Datové Akademie. 
 
 Cílem projektu je nalézt odpovědi na níže uvedené výzkumné otázky: 
+
           1. Rostou v průběhu let mzdy ve všech odvětvích, nebo v některých klesají?,
           2. Kolik je možné si koupit litrů mléka a kilogramů chleba za první a poslední srovnatelné období v dostupných datech cen a mezd?,
           3. Která kategorie potravin zdražuje nejpomaleji (je u ní nejnižší percentuální meziroční nárůst)?,
