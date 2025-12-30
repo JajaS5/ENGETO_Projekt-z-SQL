@@ -1,4 +1,4 @@
-PROJEKT z SQL
+#PROJEKT z SQL
 
 Projekt z SQL byl vytvořen v rámci kurzu Datové Akademie. 
 
