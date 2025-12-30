@@ -12,7 +12,10 @@ Cílem projektu je nalézt odpovědi na níže uvedené výzkumné otázky:
 
 Z poskytnutých dat byly vytvořeny dvě tabulky.
 
-
 t_jana_sitova_project_sql_primary_final
 t_jana_sitova_project_sql_secondary_final
 
+Dotazy jsou zpracovány v 
+Popis odpvědí poskytuje 
+
+Ing. Jana Sitová
