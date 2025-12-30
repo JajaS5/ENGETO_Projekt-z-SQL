@@ -18,5 +18,15 @@ JOIN economies AS eco
               ORDER BY cou.country, eco.year;
 
 --CHECK--
+
 SELECT*
 FROM t_jana_sitova_sql_primary_secondary_final;
+
+--CHECK-duplicity, kazdý země=13 řádků (2006-2018)
+
+SELECT country, COUNT(*) AS row_count
+FROM t_jana_sitova_sql_primary_secondary_final
+GROUP BY country
+ORDER BY row_count DESC;
+
+--
