@@ -10,6 +10,10 @@ FROM t_jana_sitova_project_sql_primary_final
 GROUP BY yr_pay
 ORDER BY YEAR;
 
+--CHECK-
+SELECT*
+FROM t_jasi_yearly_values;            
+
 --mezroční růst price/payroll--rozdíl--
 WITH yearly_growth AS (
            SELECT
