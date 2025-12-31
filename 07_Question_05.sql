@@ -22,4 +22,29 @@ SELECT *
 FROM v_price_payroll_changes;
 
 --Meziroční % změna GDP za ČR--
+CREATE OR REPLACE VIEW v_gdp_changes AS
+WITH avg_gdp AS (
+    SELECT
+              year,
+             gdp AS gdp_year
+    FROM t_jana_sitova_sql_primary_secondary_final
+    WHERE country = 'Czech Republic'),
+changes AS (
+    SELECT
+             year,
+            gdp_year,
+           LAG(gdp_year) OVER (ORDER BY year) AS prev_gdp
+  FROM avg_gdp)
+  SELECT
+           year,
+          ROUND(
+        ((gdp_year - prev_gdp) / NULLIF(prev_gdp, 0) * 100)::numeric,2) AS gdp_growth_pct
+FROM changes
+WHERE prev_gdp IS NOT NULL;
+
+--CHECK--
+SELECT*
+FROM v_gdp_changes;
+
+--
 
