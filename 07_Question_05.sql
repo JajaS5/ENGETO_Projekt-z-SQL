@@ -4,7 +4,7 @@
 CREATE OR REPLACE VIEW v_price_payroll_changes AS
 WITH changes AS (
            SELECT
-                          year,
+                         year,
                          avg_payroll_year,
                          avg_price_year,
                          LAG(avg_payroll_year) OVER (ORDER BY year) AS prev_payroll,
