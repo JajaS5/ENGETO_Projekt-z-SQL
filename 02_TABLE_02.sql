@@ -1,4 +1,4 @@
--- vytvorení DRUHÉ tabulky--
+-- vytvorení DRUHÉ tabulky--Ekonimicka data-Evropa--
 
 DROP TABLE IF EXISTS t_jana_sitova_sql_secondary_final;
 
