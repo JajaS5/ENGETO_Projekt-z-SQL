@@ -46,5 +46,13 @@ WHERE prev_gdp IS NOT NULL;
 SELECT*
 FROM v_gdp_changes;
 
---
+--meziroční % změny HDP, mezd a cen potravin--
+SELECT
+    p.year,
+    g.gdp_growth_pct,
+    p.payroll_growth_pct,
+    p.food_price_growth_pct
+FROM v_price_payroll_changes p
+JOIN v_gdp_changes g USING (year)
+ORDER BY p.year;
 
