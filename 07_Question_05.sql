@@ -11,7 +11,7 @@ WITH changes AS (
                          LAG(avg_price_year) OVER (ORDER BY year) AS prev_price
              FROM t_jasi_yearly_values)
             SELECT
-                         year,
+                       year,
                        ROUND(((avg_payroll_year - prev_payroll) / prev_payroll) * 100, 2) AS payroll_growth_pct,
                        ROUND(((avg_price_year - prev_price) / prev_price) * 100, 2) AS food_price_growth_pct
                       FROM changes
