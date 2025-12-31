@@ -11,10 +11,12 @@ Cílem projektu je nalézt odpovědi na níže uvedené výzkumné otázky:
 
 Z poskytnutých dat byly vytvořeny dvě tabulky.
 
-t_jana_sitova_project_sql_primary_final
-t_jana_sitova_project_sql_secondary_final
+t_jana_sitova_project_sql_primary_final (soubor 01_TABLE_01.sql), 
+t_jana_sitova_project_sql_secondary_final, (soubor 01_TABLE_02.sql).
 
-Dotazy jsou zpracovány v 
+Tabulky zahrnují data za období od roku 2006 až do roku 2018. První tabulka obsahuje data mezd a cen potravin v rámci České republiky, druhá tabuilka zahrnuje ejonmická data evropských států. 
+
+ 
 Popis odpvědí poskytuje 
 
 Ing. Jana Sitová
