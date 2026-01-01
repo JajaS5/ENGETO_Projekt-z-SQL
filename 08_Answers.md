@@ -34,7 +34,7 @@ K nejvýraznějšímu zlevnění ceny došlo v roce 2007 u kategorie potravin ra
 **A4:**  
 Na základě provedené analýzy v žádném roce nepřesáhl rozdíl +10 %, tedy neexistuje rok, ve kterém by růst cen potravin převyšoval růst mezd o více než 10 %. Nejvýraznější rozdíl byl zaznamenán v roce 2013, kdy rozdíl činil 6,65 % (meziroční růst potravin činil 5,1 %, meziroční pokles mezd -1,56 %). Největší nárůst meziročních cen potravin nastal v roce 2017, a to ve výši 9,63 %.  
 
-Nutno zmínit i rok 2009, kdy došlo k výraznému propadu cen potravin (−6,42 %), zatímco mzdy nadále rostly (+3,07 %), takže rozdíl činil −9,49 p. b., což znamená, že mzdy rostly podstatně rychleji než ceny potravin.
+Nutno zmínit i rok 2009, kdy došlo k výraznému propadu cen potravin (−6,42 %), zatímco mzdy nadále rostly (+3,07 %), takže rozdíl činil −9,49 %, což znamená, že mzdy rostly podstatně rychleji než ceny potravin.
 
 ---
 
