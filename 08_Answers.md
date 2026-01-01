@@ -49,3 +49,8 @@ U cen potravin však nelze jednoznačně stanovit přímou souvislost s vývojem
 
 Celkově lze uzavřít, že růst HDP ovlivňuje mzdy mnohem silněji než ceny potravin. Výraznější růst ekonomiky se sice může někdy projevit i na cenách potravin, ale tato souvislost není pravidelná ani okamžitá. Ceny potravin proto nelze považovat za jednoznačný odraz ekonomického vývoje.
 
+---
+
+**Autor:**  
+*Ing. Jana Sitová*
+
