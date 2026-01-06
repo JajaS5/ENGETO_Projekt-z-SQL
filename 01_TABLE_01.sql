@@ -1,4 +1,4 @@
--- vytvorení první tabulky-mzdy-potraviny-Ceska republika--
+-- mzdy-potraviny-Ceska republika--
 
 DROP TABLE IF EXISTS t_jana_sitova_sql_primary_final;
 
