@@ -1,1 +1,2 @@
+--Pomocne SELECTY--
 
