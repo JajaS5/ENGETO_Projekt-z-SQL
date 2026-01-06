@@ -1,6 +1,6 @@
 --Pomocne SELECTY--
 
---TO table_01--
+--TO TABLE-01--
 --ZKOUSKA--
 SELECT *
 FROM t_jana_sitova_project_sql_primary_final;
