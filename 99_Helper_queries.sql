@@ -27,6 +27,22 @@ SELECT
 FROM economies; 
 --output 1960, 2020--
 
+--TO TABLE_02--
+--CHECK--
+
+SELECT*
+FROM t_jana_sitova_sql_primary_secondary_final;
+
+--CHECK-duplicity, kazdý země=13 řádků (2006-2018)
+
+SELECT country, COUNT(*) AS row_count
+FROM t_jana_sitova_sql_primary_secondary_final
+GROUP BY country
+ORDER BY row_count DESC;
+
+--
+
+
 --Pocet 0 ve sloupecku--
 
 SELECT COUNT(*) AS pocet_radku
