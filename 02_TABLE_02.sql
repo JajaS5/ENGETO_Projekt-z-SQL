@@ -9,11 +9,11 @@ CREATE TABLE t_jana_sitova_project_sql_secondary_final AS
                         AVG(eco.population) AS population,
                         AVG(eco.gini) AS gini,
                         AVG(eco.gdp) AS gdp
-                FROM countries AS cou
+               FROM countries AS cou
 JOIN economies AS eco
                ON eco.country = cou.country
                WHERE cou.continent = 'Europe'
                AND eco.year BETWEEN 2006 AND 2018
-              GROUP BY cou.country, eco.year
-              ORDER BY cou.country, eco.year;
+               GROUP BY cou.country, eco.year
+               ORDER BY cou.country, eco.year;
 
