@@ -1,14 +1,14 @@
 -- vytvorení DRUHÉ tabulky--Ekonomicka data-Evropa--
 
-DROP TABLE IF EXISTS t_jana_sitova_project_sql_secondary_final
+DROP TABLE IF EXISTS t_jana_sitova_project_sql_secondary_final;
 
-CREATE TABLE t_jana_sitova_sql_primary_secondary_final AS
+CREATE TABLE t_jana_sitova_project_sql_secondary_final AS
                SELECT
-                          cou.country,
-                          eco.year,
-                          AVG(eco.population) AS population,
-                         AVG(eco.gini) AS gini,
-                         AVG(eco.gdp) AS gdp
+                        cou.country,
+                        eco.year,
+                        AVG(eco.population) AS population,
+                        AVG(eco.gini) AS gini,
+                        AVG(eco.gdp) AS gdp
                 FROM countries AS cou
 JOIN economies AS eco
                ON eco.country = cou.country
