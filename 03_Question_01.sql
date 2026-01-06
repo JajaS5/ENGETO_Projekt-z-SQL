@@ -23,7 +23,7 @@ WITH yearly_payroll AS (
        GROUP BY branch, year),
 payroll_changes AS (
          SELECT
-                     brancg,
+                     branch,
                      year,
                      avg_payroll_year,
                      LAG(avg_payroll_year) OVER (PARTITION BY branch ORDER BY year) AS prev_payroll
