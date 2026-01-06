@@ -1,8 +1,8 @@
 -- mzdy-potraviny-Ceska republika--
 
-DROP TABLE IF EXISTS t_jana_sitova_sql_primary_final;
+DROP TABLE IF EXISTS t_jana_sitova_project_sql_primary_final;
 
-CREATE TABLE t_jana_sitova_sql_primary_final AS 
+CREATE TABLE t_jana_sitova_project_sql_primary_final AS 
 SELECT
              czpay.payroll_year AS year,
              czpay.industry_branch_code AS ID_branch,
