@@ -7,7 +7,7 @@ SELECT
             AVG(avg_payroll) AS avg_payroll_year,
             AVG(avg_price) AS avg_price_year
 FROM t_jana_sitova_project_sql_primary_final
-GROUP BY yr_pay
+GROUP BY year
 ORDER BY year;       
 
 --mezroční růst price/payroll--rozdíl--
