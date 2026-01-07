@@ -5,8 +5,8 @@ CREATE OR REPLACE VIEW v_price_payroll_changes AS
 WITH changes AS (
            SELECT
                          year,
-                         AVG_payroll_year,
-                         AVG_price_year,
+                         avg_payroll_year,
+                         avg_price_year,
                          LAG(avg_payroll_year) OVER (ORDER BY year) AS prev_payroll,
                          LAG(avg_price_year) OVER (ORDER BY year) AS prev_price
              FROM t_jasi_yearly_values)
