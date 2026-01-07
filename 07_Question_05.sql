@@ -5,8 +5,8 @@ CREATE OR REPLACE VIEW v_price_payroll_changes AS
 WITH changes AS (
            SELECT
                          year,
-                         avg_payroll_year,
-                         avg_price_year,
+                         AVG_payroll_year,
+                         AVG_price_year,
                          LAG(avg_payroll_year) OVER (ORDER BY year) AS prev_payroll,
                          LAG(avg_price_year) OVER (ORDER BY year) AS prev_price
              FROM t_jasi_yearly_values)
@@ -17,9 +17,6 @@ WITH changes AS (
                       FROM changes
                       WHERE prev_payroll IS NOT NULL;
 
---CHECK--
-SELECT *
-FROM v_price_payroll_changes;
 
 --Meziroční % změna GDP za ČR--
 CREATE OR REPLACE VIEW v_gdp_changes AS
@@ -41,10 +38,6 @@ changes AS (
         ((gdp_year - prev_gdp) / NULLIF(prev_gdp, 0) * 100)::numeric,2) AS gdp_growth_pct
 FROM changes
 WHERE prev_gdp IS NOT NULL;
-
---CHECK--
-SELECT*
-FROM v_gdp_changes;
 
 --meziroční % změny HDP, mezd a cen potravin--
 SELECT
