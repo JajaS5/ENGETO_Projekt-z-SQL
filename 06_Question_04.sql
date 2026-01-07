@@ -3,16 +3,12 @@
 --průměrná mzda v daném roce--průměrná cena v daném roce--
 CREATE OR REPLACE VIEW t_jasi_yearly_values AS
 SELECT
-            yr_pay AS year,
+            year,
             AVG(avg_payroll) AS avg_payroll_year,
-           AVG(avg_price) AS avg_price_year
+            AVG(avg_price) AS avg_price_year
 FROM t_jana_sitova_project_sql_primary_final
 GROUP BY yr_pay
-ORDER BY YEAR;
-
---CHECK-
-SELECT*
-FROM t_jasi_yearly_values;            
+ORDER BY year;       
 
 --mezroční růst price/payroll--rozdíl--
 WITH yearly_growth AS (
