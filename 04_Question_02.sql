@@ -9,7 +9,7 @@ WITH jasi AS (
         ROUND(AVG(tjasif.avg_price), 2) AS avg_of_avg_price,
         cpca.price_value,
         cpca.price_unit
-    FROM t_jana_sitova_project_sql_primary_final tjasif
+    FROM t_jana_sitova_project_SQL_primary_final tjasif
     JOIN czechia_price_category cpca
               ON tjasif.id_goods = cpca.code
     WHERE tjasif.YEAR IN (2006, 2018)
