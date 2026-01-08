@@ -18,7 +18,7 @@ WITH yearly_payroll AS (
                     branch,
                     year,
                     AVG(avg_payroll) AS avg_payroll_year
-         FROM t_jana_sitova_project_sql_primary_final
+         FROM t_jana_sitova_project_SQL_primary_final
         WHERE year BETWEEN 2006 AND 2018
        GROUP BY branch, year),
 payroll_changes AS (
@@ -45,7 +45,7 @@ WITH yearly_payroll AS (
                    branch AS industry_branch,
                    year AS year,
                    AVG(avg_payroll) AS avg_payroll_year
-                  FROM t_jana_sitova_project_sql_primary_final
+                  FROM t_jana_sitova_project_SQL_primary_final
            WHERE year BETWEEN 2006 AND 2018
            GROUP BY branch, year),
 payroll_changes AS (
