@@ -15,53 +15,52 @@ ORDER BY payroll_change_percent;
 --Zjištění poklesu mezd, klesají mzdy????---
 WITH yearly_payroll AS (
         SELECT
-                    branch,
-                    year,
-                    AVG(avg_payroll) AS avg_payroll_year
-         FROM t_jana_sitova_project_SQL_primary_final
+              branch,
+              year,
+              AVG(avg_payroll) AS avg_payroll_year
+        FROM t_jana_sitova_project_SQL_primary_final
         WHERE year BETWEEN 2006 AND 2018
-       GROUP BY branch, year),
+        GROUP BY branch, year),
 payroll_changes AS (
          SELECT
-                     branch,
-                     year,
-                     avg_payroll_year,
-                     LAG(avg_payroll_year) OVER (PARTITION BY branch ORDER BY year) AS prev_payroll
-       FROM yearly_payroll
-)
-       SELECT
-                   branch,
-                   CASE
-                            WHEN MIN(avg_payroll_year - prev_payroll) < 0 THEN 'ANO, někdy klesaly'
-                            ELSE 'NE, pouze rostly' END AS payroll_trend
-     FROM payroll_changes
-    WHERE prev_payroll IS NOT NULL
-    GROUP BY branch
-    ORDER BY payroll_trend;
+                branch,
+                year,
+                avg_payroll_year,
+                LAG(avg_payroll_year) OVER (PARTITION BY branch ORDER BY year) AS prev_payroll
+          FROM yearly_payroll)
+          SELECT
+                branch,
+                CASE
+                     WHEN MIN(avg_payroll_year - prev_payroll) < 0 THEN 'ANO, někdy klesaly'
+                     ELSE 'NE, pouze rostly' END AS payroll_trend
+          FROM payroll_changes
+          WHERE prev_payroll IS NOT NULL
+          GROUP BY branch
+          ORDER BY payroll_trend;
 
 --Pokles mezd, meziroční pokles--
 WITH yearly_payroll AS (
           SELECT
-                   branch AS industry_branch,
-                   year AS year,
-                   AVG(avg_payroll) AS avg_payroll_year
-                  FROM t_jana_sitova_project_SQL_primary_final
-           WHERE year BETWEEN 2006 AND 2018
-           GROUP BY branch, year),
+              branch AS industry_branch,
+              year AS year,
+              AVG(avg_payroll) AS avg_payroll_year
+          FROM t_jana_sitova_project_SQL_primary_final
+          WHERE year BETWEEN 2006 AND 2018
+          GROUP BY branch, year),
 payroll_changes AS (
           SELECT
-                   industry_branch,
-                   year,
-                   avg_payroll_year,
-                   LAG(avg_payroll_year) OVER (PARTITION BY industry_branch ORDER BY year ) AS prev_payroll
+                industry_branch,
+                year,
+                avg_payroll_year,
+                LAG(avg_payroll_year) OVER (PARTITION BY industry_branch ORDER BY year ) AS prev_payroll
           FROM yearly_payroll)
-         SELECT
-                  industry_branch,
-                 year,
+          SELECT
+                industry_branch,
+                year,
                 ROUND(((avg_payroll_year - prev_payroll) / prev_payroll) * 100, 2) AS yoy_change_percent
                FROM payroll_changes
-              WHERE prev_payroll IS NOT NULL
-              AND avg_payroll_year < prev_payroll
-              ORDER BY yoy_change_percent ASC;
+               WHERE prev_payroll IS NOT NULL
+               AND avg_payroll_year < prev_payroll
+               ORDER BY yoy_change_percent ASC;
 
 
