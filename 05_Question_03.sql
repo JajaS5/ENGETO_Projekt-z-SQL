@@ -39,35 +39,35 @@ ORDER BY avg_yoy_growth_percent ASC;
 
 --minimum meziroční nárůst--
 WITH yearly_prices AS (
-    SELECT
-            goods,
-            year,
-            AVG(avg_price) AS avg_price_year
-    FROM t_jana_sitova_project_SQL_primary_final
-    GROUP BY goods, year),
+SELECT
+      goods,
+      year,
+      AVG(avg_price) AS avg_price_year
+FROM t_jana_sitova_project_SQL_primary_final
+GROUP BY goods, year),
 price_changes AS (
-          SELECT
-            goods,
-            year,
-            ROUND((avg_price_year - LAG(avg_price_year) OVER (PARTITION BY goods ORDER BY year)) /NULLIF(LAG(avg_price_year) OVER (PARTITION BY goods ORDER BY year), 0) * 100,2) AS pct_change
-         FROM yearly_prices)
-        SELECT pc.goods, pc.year, pc.pct_change
-        FROM price_changes pc
+SELECT
+      goods,
+      year,
+      ROUND((avg_price_year - LAG(avg_price_year) OVER (PARTITION BY goods ORDER BY year)) /NULLIF(LAG(avg_price_year) OVER (PARTITION BY goods ORDER BY year), 0) * 100,2) AS pct_change
+FROM yearly_prices)
+SELECT pc.goods, pc.year, pc.pct_change
+FROM price_changes pc
 JOIN (
-         SELECT goods, MIN(pct_change) AS min_change
-         FROM price_changes
-         WHERE pct_change IS NOT NULL
-        GROUP BY goods) m ON pc.goods = m.goods AND pc.pct_change = m.min_change
-        ORDER BY pc.pct_change ASC;
+  SELECT goods, MIN(pct_change) AS min_change
+  FROM price_changes
+  WHERE pct_change IS NOT NULL
+  GROUP BY goods) m ON pc.goods = m.goods AND pc.pct_change = m.min_change
+  ORDER BY pc.pct_change ASC;
 
 --Maximum maziroční růst--
 WITH yearly_prices AS (
-        SELECT
-            goods,
-            year,
-            AVG(avg_price) AS avg_price_year
-        FROM t_jana_sitova_project_SQL_primary_final
-        GROUP BY goods, year),
+SELECT
+     goods,
+     year,
+     AVG(avg_price) AS avg_price_year
+FROM t_jana_sitova_project_SQL_primary_final
+GROUP BY goods, year),
 price_changes AS (
       SELECT
             goods,
