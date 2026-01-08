@@ -2,7 +2,7 @@
 
 DROP TABLE IF EXISTS t_jana_sitova_project_sql_secondary_final;
 
-CREATE TABLE t_jana_sitova_project_sql_secondary_final AS
+CREATE TABLE t_jana_sitova_project_SQL_secondary_final AS
                SELECT
                         cou.country,
                         eco.year,
