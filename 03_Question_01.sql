@@ -7,7 +7,7 @@ SELECT
               ROUND(MAX(CASE WHEN year = 2018 THEN avg_payroll END), 2) AS payroll_2018,
               ROUND((MAX(CASE WHEN year = 2018 THEN avg_payroll END)- MAX(CASE WHEN year = 2006 THEN avg_payroll END))/ 
               NULLIF(MAX(CASE WHEN year = 2006 THEN avg_payroll END), 0) *100,2) AS payroll_change_percent
-FROM t_jana_sitova_project_sql_primary_final
+FROM t_jana_sitova_project_SQL_primary_final
 WHERE year IN (2006, 2018)
 GROUP BY branch
 ORDER BY payroll_change_percent;
