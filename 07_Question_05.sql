@@ -24,7 +24,7 @@ WITH avg_gdp AS (
     SELECT
               year,
              gdp AS gdp_year
-    FROM t_jana_sitova_SQL_primary_secondary_final
+    FROM t_jana_sitova_project_SQL_secondary_final
     WHERE country = 'Czech Republic'),
 changes AS (
     SELECT
