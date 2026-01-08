@@ -9,5 +9,5 @@ WHERE cpc.name LIKE 'Chléb%' OR cpc.name LIKE 'Mléko%'
 
 ---overeni nul--
 SELECT COUNT(*) AS pocet_radku
-FROM t_jana_sitova_project_sql_primary_final
+FROM t_jana_sitova_project_SQL_primary_final
 WHERE id_branch IS NULL;
