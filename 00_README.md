@@ -20,8 +20,8 @@ Z poskytnutých dat byly vytvořeny dvě tabulky:
 
 | Název tabulky | Popis | Soubor |
 |---------------|-------|--------|
-| `t_jana_sitova_project_sql_primary_final` | Data mezd a cen potravin v ČR | `01_TABLE_01.sql` |
-| `t_jana_sitova_project_sql_secondary_final` | Ekonomická data evropských států | `01_TABLE_02.sql` |
+| `t_jana_sitova_project_SQL_primary_final` | Data mezd a cen potravin v ČR | `01_TABLE_01.sql` |
+| `t_jana_sitova_project_SQL_secondary_final` | Ekonomická data evropských států | `01_TABLE_02.sql` |
 
 Data zahrnují období **2006–2018**.  
 První tabulka obsahuje data mezd a cen potravin v ČR.  
