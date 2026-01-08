@@ -16,22 +16,22 @@ ORDER BY price_diff_percent DESC;
 WITH yearly_prices AS (
            SELECT
                        goods,
-                       yr_pay,
+                       year,
                        AVG(avg_price) AS avg_price_year
            FROM t_jana_sitova_project_SQL_primary_final
-          GROUP BY goods, yr_pay),
+          GROUP BY goods, year),
 price_changes AS (
           SELECT
                       goods,
-                      yr_pay,
+                      year,
                       avg_price_year,
                       LAG(avg_price_year) OVER (
                       PARTITION BY goods
-                      ORDER BY yr_pay) AS prev_price
+                      ORDER BY year) AS prev_price
            FROM yearly_prices)
   SELECT
                goods,
-                ROUND(AVG((avg_price_year - prev_price)/ NULLIF(prev_price, 0) * 100), 2) AS avg_yoy_growth_percent
+               ROUND(AVG((avg_price_year - prev_price)/ NULLIF(prev_price, 0) * 100), 2) AS avg_yoy_growth_percent
 FROM price_changes
 WHERE prev_price IS NOT NULL
 GROUP BY goods
