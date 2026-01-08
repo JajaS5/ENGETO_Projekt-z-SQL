@@ -8,7 +8,7 @@ SELECT
              czpay.industry_branch_code AS id_branch,
              indbra.name AS branch,
              ROUND (AVG (czpay.value),2) AS avg_payroll,
-             price.category_code AS ID_goods,
+             price.category_code AS id_goods,
              catpr.name AS goods,
              ROUND (AVG(price.value):: numeric,2) AS avg_price
 FROM czechia_payroll czpay
@@ -23,8 +23,8 @@ WHERE  czpay.industry_branch_code IS NOT  NULL
       AND czpay.value_type_code = 5958
       AND czpay.unit_code=200
       AND czpay.calculation_code=200
-GROUP BY year, ID_branch, branch, ID_goods, goods
-ORDER BY year, ID_branch, ID_goods
+GROUP BY year, id_branch, branch, id_goods, goods
+ORDER BY year, id_branch, id_goods
 ;
 
 
